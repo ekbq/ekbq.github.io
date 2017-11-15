@@ -11,7 +11,7 @@ sitemap:
 
 <span class="image left"><img src="{{ "/images/pic04.jpg" | absolute_url }}" alt="" /></span>
 
-__Business `| Data `| Language__
+**Business. Data. Language**
 
 In my formative years, I took up Japanese as a third language. Learning the syntax, vocabulary and grammar patterns, I made steady progress, eventually attaining the JLPT N2 certification. 
 
