@@ -1,16 +1,59 @@
 ---
 layout: post
-title:  “The Second Post“
-date:   2017-11-01
-excerpt: “Can it be changed?“
-image: "/images/pic02.jpg"
+title:  Capstone Project
+date:   2017-11-15
+excerpt: "To Click Or Not To Click, That Is The Question"
+image: "/images/click1.jpg"
 ---
 
-## How to Use This Theme
-When you least expect it…
+## Motivation
 
-## Features
-### Auto-Generating Sitemap
+In the Internet era, the traditional walls of media have been broken down. Today, it is possible for anyone to publish an article or video online. Thousands of websites exist, allowing one to pick and choose where they consume news content. 
+
+The proliferation of content has its drawbacks. Studies have shown that our attention spans have become shorter as we are overwhelmed by the amount of content we get to choose from. The fight for viewership online has driven many to publish articles of subpar quality where the content is not as useful as we had hoped it would be. Clickbait - defined as a type of web content that intentionally draws viewers into clicking on a link, is a problem that all of us are aware of and accept as a part of living in the digital age. 
+
+Part of how clickbait works is that they often have catchy titles. When clicked upon, users are often taken to articles whose content either has little purpose (read: time waster), or simply does not display the content that was promised in the title. While it is effective at attracting eyeballs to a web page for marketers, users are often 'left hanging', frustrating them in addition to being an unproductive use of time. 
+
+The main goal of my capstone project was to use machine learning techniques to create that model that predicts if an article was clickbait, without having to read through the article myself. Most people are already familiar with email filters that delete the potentially harmful spam mail that comes into their inboxes, so this project would be a variant of the same problem. 
+
+## Success Metrics
+
+![Confusion Matrix](https://github.com/ekbq/ekbq.github.io/blob/master/images/confusion_matrix.png)
+
+At its essence, my project is dealing with a _binary classification problem_, meaning it is trying to determine if a certain article is clickbait (assigned to value 1) or not (assigned to value 0). The confusion matrix is a table that is often used to describe the peformance of a classifier. There are numerous metrics that can be obtained from the table, but for simplification purposes, I am most interested in the _recall_ score, which is given by the number of true positives divided by the total number of true positives and false negatives. 
+
+## Data
+
+I obtained a corpus of text courtesy of the Bauhaus-Universität Weimar in Germany. The corpus consists of 19,538 articles of text, with several accompanying columns of information. Another separate corpus contained the 'judgment scores' that indicated whether that particular article was clickbait. When read into a pandas dataframe, it looks like the following:
+
+![Dataframe (combined version with additional features)](https://github.com/ekbq/ekbq.github.io/blob/master/images/df.png)
+
+### A Word About Text... 
+
+Text data comes in an unstructured form. There are hundreds of thousands of ways to combine a string of letters to form a word, followed by an infinite number of ways to combine words to form a sentence. Keep in mind that I am only referring to the English language here. I have not taken into account the [other 6,908 languages in existence](https://www.linguisticsociety.org/content/how-many-languages-are-there-world) (as estimated by the Summer Institute for Languages). Once you do, you can start to comprehend the complexity of handling data arising from text.
+
+## Exploratory Data Analysis 
+
+First off, I was curious to find out which words most frequently appear in the articles that are tagged as clickbait. To do that, I generated a wordcloud and it showed me this:
+
+![Wordcloud](https://github.com/ekbq/ekbq.github.io/blob/master/images/wordcloud.png)
+
+The frequency of each word appearing in clickbait articles is given by its size in the graphic above. Leaving the largest words aside, my initial observation is that there are quite a handful of words that are associated with politics - 'trump', 'president', 'clinton', 'hilary', 'business' and so on. 
+
+So what about the largest words then? What are they most associated with? For that, I used Word2Vec, a model that takes in a large chunk of text and turns each word into a vector representation of n-dimensions. _n_ can be any number but I have specified it to be 300 in my case. The result is that words that share common contexts in the corpus are located in close proximity to one another in the vector space. 
+
+Doing so generated the following lists of words that the model considers 'most similar' to that particular word:
+
+![Sign](https://github.com/ekbq/ekbq.github.io/blob/master/images/sign.png)
+![Post](https://github.com/ekbq/ekbq.github.io/blob/master/images/post.png)
+![Log](https://github.com/ekbq/ekbq.github.io/blob/master/images/log.png)
+
+### Topic Modeling
+
+In text analysis, topic modeling is a form of unsupervised learning that uses statistical models to discover the abstract 'topics' that occur in a corpus of text. By using the excellent tool provided by GraphLab, I generated a visual representation of the topics found in the corpus.
+
+
+
 The sitemap is auto generated! Just simply change the front matter of each site. It looks like so...
 ```
 sitemap:
