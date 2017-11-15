@@ -7,21 +7,17 @@ sitemap:
     lastmod: 2017-11-02
     changefreq: weekly
 ---
-## About our Site
+## About Me
 
 <span class="image left"><img src="{{ "/images/pic04.jpg" | absolute_url }}" alt="" /></span>
 
-Making steady content and conveying it well takes a great deal of research and, hence, time and exertion. Building a profound established comprehension of your target customer needs is critical as your principle objective ought to be to fulfill their requirements as awesome content. You should need to enhance their lives. Having significant content like this may not be simple by any methods. Be that as it may, in any case, it's a fundamental apparatus in the event that you expect to grow a fruitful and supportable business in the present web focused world.
+Business | Data | Language
 
-Receiving the benefits of content is a certain something. Be that as it may, it's so substantially less demanding once you begin conveying all the more successfully. The profitable content thought isn't just about bragging your item's capacities and general worth or your organization's achievements. You should concentrate less on advertising how awesome your item is and rather concentrate on indicating how valuable it is. This is a client focused approach as it concentrates on their issues and your answer for them. Making yourself fundamental is critical.
+In my formative years, I took up Japanese as a third language. Learning the syntax, vocabulary and grammar patterns, I made steady progress, eventually attaining the JLPT N2 certification. 
 
-### Content is Imortant
-<div class="box">
-  <p>
-  In saying that, a one-measure fits-all approach won't do the trick with regards to content promoting. Rather, an emphasis on making remarkable, high caliber and totally genuine content that is engaging, helpful and fascinating for customers will get you the crown. From content, video and symbolism to infographics, studies, online courses and podcasts, whatever your favored content medium is, guarantee it is shareable and pertinent to your industry.
-  </p>
-</div>
+Later on, in my university days, I decided to do my undergraduate studies in Business Administration, thinking that the degree could help me when I wanted to launch my own business someday. My data-driven nature, and need to quantify all things in a rational way, led me to specialize in Finance. 
 
-<span class="image left"><img src="{{ "/images/pic05.jpg" | absolute_url }}" alt="" /></span>
+It was the same curiosity and interest in **doing more with data** that led me to take the Data Science Immersive with General Assembly. I saw that many industries were being disrupted / transformed by the use of AI and machine learning, and wanted to gain hands-on knowledge. 
 
-On social media, we may share our own thoughts and advance our image notwithstanding spreading musings for different associations and affiliations. With such a critical number of associations with people and relationship on social media, our experience can be over-burden with a considerable measure of information.
+There is much to learn in this field. I may not know everything there is to know yet, and the learning curve is steep. But I look back at the old me when I was first starting out with Japanese, and realize that the journey will look the same - tough in the beginning, but sweeter towards the end. Life is a never-ending journey of attaining more knowledge and I am strapped in for the long haul!
+
