@@ -14,8 +14,6 @@ I wanted to create a model that could predict whether a customer was likely to t
 
 ## Success Metrics
 
-{% include image.html url="https://i.imgur.com/Jnb0JQY.png" description="confm" %}
-
 The accuracy of the model, fitted on classifier models would serve as the metric for my project. 
 
 ## Data
@@ -26,25 +24,25 @@ Due to the sensitive nature of the information that banks have on their clients,
 
 The dataset contains a mix of categorical and numerical features.
 
-{% include image.html url="https://ibb.co/mauViR" description="df" %}
+{% include image.html url="https://i.imgur.com/4W6kGIX.png" description="bankdf" %}
 
 A quick look around at the dataset shows me the following:
 
-{% include image.html url="https://imgur.com/raelAUv" description="age" %}
+{% include image.html url="https://i.imgur.com/RzKDplR.png" description="age" %}
 
 The age group is skewed to the right, with most people in their 30s to 40s.
 
-{% include image.html url="https://imgur.com/MKgrsn1" description="campaign" %}
+{% include image.html url="https://i.imgur.com/tDDng0p.png" description="campaign" %}
 
 Most people were contacted less than 10 times for the current marketing campaign. The median was 2 times.
 
-{% include image.html url="https://imgur.com/sHIm5v0" description="previous" %}
+{% include image.html url="https://i.imgur.com/15LbmxF.png" description="previous" %}
 
 Most of the customers have never been contacted before prior to this campaign.
 
 ### What months are best for marketing?
 
-{% include image.html url="https://imgur.com/35DAkL1" description="monthvc" %}
+{% include image.html url="https://i.imgur.com/CG1q3uD.png" description="monthvc" %}
 
 The three busiest months for marketing were in May, July and August, corresponding to the summer months. 
 
@@ -54,13 +52,13 @@ I performed some data preprocessing on the categorical data. Using patsy, I gene
 
 I then took a look at the dataset in terms of how many successful calls there were (as compared to the unsuccessful ones). 
 
-{% include image.html url="https://imgur.com/1XPiN7Z" description="monthvc" %}
+{% include image.html url="https://i.imgur.com/D3qFGMo.png" description="imba" %}
 
 From the above it can be seen that the dataset is somewhat imbalanced, with only 4640 positive samples. 
 
 Next up, I did a GridSearch of the dataset to determine the 'best hyperparameters', then used it to train a logistic regression model.
 
-{% include image.html url="https://imgur.com/IhM8vym" description="lrcv" %}
+{% include image.html url="https://i.imgur.com/p06sMkF.png" description="gridsearch" %}
 
 ## Exploring Decision Trees
 
@@ -68,22 +66,19 @@ Decision trees are a non-parametric supervised learning method used for classifi
 
 Depending on the data, decision trees can can split into many, many branches. I trained three models ofmax depth 1, 2 and 3. The decision tree with max depth = 3 is shown here}:
 
-{% include image.html url="https://imgur.com/uIPyVUs" description="dt" %}
-{% include image.html url="https://imgur.com/q0vZbOe" description="top feat" %}
+{% include image.html url="https://i.imgur.com/peCwmq8.png" description="dt" %}
+{% include image.html url="https://i.imgur.com/Gdh2LCn.png" description="top feat" %}
 
 The decision tree model had the effect of telling me that most of the engineered features are not predictive for determining whether a customer takes up the bank's term deposit. Therefore I will seek to refit the logistic regression model to see how (if any) the scores will change.
 
-{% include image.html url="https://imgur.com/pgHKQsy" description="rus" %}
+{% include image.html url="https://i.imgur.com/7kD8YNy.png" description="rus" %}
 
 
 ## Limitations, Conclusions and Thoughts
 
-This has been a very interesting project for me. My final thoughts on this are:
+1. The dataset is small. There are many other data points that should be easily available, such as customers' salary, that if included, could lead to be better classification score.
+2. Future marketing campaigns should focus on the young and elderly, while the months of March and May are the best time to ramp up the marketing activities.
+3. When marketing, try to target those who have never been contacted in the previous campaign before.  
 
-1. A good model relies on having a very large corpus of text to learn its vocabulary from. Compared to datasets used in standard packages in NLP (e.g. Glove), my corpus appears to be too small. But large datasets have a tradeoff in that they take significantly longer times and computing resources to train. I believe my model's level of accuracy is still acceptable, relative to the training time taken.
-	2. The use of simplistic Naive Bayes classifiers in predicting clickbait articles can do most of the heavy lifting, getting up to 70% of the job done (after balancing the dataset). The use of neural networks can help, as seen in my use of a LSTM RNN model, but I wonder whether the model will do as well when exposed to a completely new corpus.
-3. There are many potential areas for improvement. For one, there are already papers published on the use of character-level RNNs, where every token is a single letter in the corpus. I did not consider the implementation of this model since my project is a classification problem, not a text-generative one. Another way to refine the model would be to introduce additional feature engineering that may help in classifying, e.g. using POS(part-of-speech) tagging to allow the model to better understand context within a sentence. Last but not least. 
-4. Text data is unstructured, messy and hard to preprocess. There are dozens of scenarios that a regex has to take into account for it to properly clean the data. It is also hard to visualize given its high-dimensionality. Many errors can be made in between the steps of preprocessing and model training, without an easy way to spot them.
-5. At the end of the day, as with all models, (garbage in = garbage out). Admittedly, my preprocessing steps only sought to remove basic items such as punctuation and unicode format. I note that articles may sometimes contain email addresses and emojis. There were also several words with spelling errors that I did not correct. A thorough cleaning of the dataset should be able to factor in all the above to ensure a better score.
 
 Source code for my project is [here.](https://github.com/ekbq/hello-world/blob/master/Capstone/Capstone%20-%20Clickbait.ipynb)
