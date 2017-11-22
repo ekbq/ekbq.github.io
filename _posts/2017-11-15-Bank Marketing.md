@@ -25,7 +25,7 @@ Due to the sensitive nature of the information that banks have on their clients,
 The dataset contains a mix of categorical and numerical features.
 
 {% include image.html url="https://i.imgur.com/4W6kGIX.png" description="bankdf" %}
-
+<br>
 A quick look around at the dataset shows me the following:
 
 {% include image.html url="https://i.imgur.com/RzKDplR.png" description="age" %}
@@ -41,7 +41,7 @@ Most people were contacted less than 10 times for the current marketing campaign
 Most of the customers have never been contacted before prior to this campaign.
 
 ### What months are best for marketing?
-
+<br>
 {% include image.html url="https://i.imgur.com/CG1q3uD.png" description="monthvc" %}
 
 The three busiest months for marketing were in May, July and August, corresponding to the summer months. 
@@ -53,13 +53,14 @@ I performed some data preprocessing on the categorical data. Using patsy, I gene
 I then took a look at the dataset in terms of how many successful calls there were (as compared to the unsuccessful ones). 
 
 {% include image.html url="https://i.imgur.com/D3qFGMo.png" description="imba" %}
-
+<br>
 From the above it can be seen that the dataset is somewhat imbalanced, with only 4640 positive samples. 
 
 Next up, I did a GridSearch of the dataset to determine the 'best hyperparameters', then used it to train a logistic regression model.
 
 {% include image.html url="https://i.imgur.com/p06sMkF.png" description="gridsearch" %}
 
+<br>
 ## Exploring Decision Trees
 
 Decision trees are a non-parametric supervised learning method used for classification and regression. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features. 
@@ -68,12 +69,12 @@ Depending on the data, decision trees can can split into many, many branches. I 
 
 {% include image.html url="https://i.imgur.com/peCwmq8.png" description="dt" %}
 {% include image.html url="https://i.imgur.com/Gdh2LCn.png" description="top feat" %}
-
+<br>
 The decision tree model had the effect of telling me that most of the engineered features are not predictive for determining whether a customer takes up the bank's term deposit. Therefore I will seek to refit the logistic regression model to see how (if any) the scores will change.
 
 {% include image.html url="https://i.imgur.com/7kD8YNy.png" description="rus" %}
 
-
+<br>
 ## Limitations, Conclusions and Thoughts
 
 1. The dataset is small. There are many other data points that should be easily available, such as customers' salary, that if included, could lead to be better classification score.
