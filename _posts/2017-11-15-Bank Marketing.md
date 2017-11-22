@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  Capstone Project
+title:  Project
 date:   2017-11-15
-excerpt: "Bank Marketing"
+excerpt: "Bank Marketing - Data Insights"
 image: "/images/bank.jpg"
 ---
 
